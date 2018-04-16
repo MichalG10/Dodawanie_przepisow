@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="780fb5d59b604dba889562ab19f01ea6" Name="Diagram1">
+        <EntityTypeShape EntityType="QuickMeal_dbModel.Kategoria" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMeal_dbModel.Produkt" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMeal_dbModel.Przepis" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMeal_dbModel.Skladnik" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMeal_dbModel.Typ" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickMeal_dbModel.database_firewall_rules" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="QuickMeal_dbModel.FK__Produkt__Id_Kate__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMeal_dbModel.FK__Skladnik__Id_Pro__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMeal_dbModel.FK__Przepis__Id_Typu__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuickMeal_dbModel.FK__Skladnik__Id_Prz__5441852A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

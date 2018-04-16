@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuickMeal_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kategoria">
+    <Key>
+      <PropertyRef Name="Id_Kategorii" />
+    </Key>
+    <Property Name="Id_Kategorii" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produkt">
+    <Key>
+      <PropertyRef Name="Id_Produktu" />
+    </Key>
+    <Property Name="Id_Produktu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Kategorii" Type="int" Nullable="false" />
+    <Property Name="Nazwa" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Przepis">
+    <Key>
+      <PropertyRef Name="Id_Przepisu" />
+    </Key>
+    <Property Name="Id_Przepisu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Typu" Type="int" Nullable="false" />
+    <Property Name="Nazwa" Type="varchar" MaxLength="50" />
+    <Property Name="Opis" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="Czas" Type="int" />
+    <Property Name="Zdjecie" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Skladnik">
+    <Key>
+      <PropertyRef Name="Id_Skladniku" />
+    </Key>
+    <Property Name="Id_Skladniku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Przepisu" Type="int" Nullable="false" />
+    <Property Name="Id_Produktu" Type="int" Nullable="false" />
+    <Property Name="Gramatura" Type="varchar" MaxLength="15" />
+    <Property Name="Ilosc" Type="int" />
+  </EntityType>
+  <EntityType Name="Typ">
+    <Key>
+      <PropertyRef Name="Id_Typu" />
+    </Key>
+    <Property Name="Id_Typu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QuickMeal_db.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Produkt__Id_Kate__5165187F">
+    <End Role="Kategoria" Type="Self.Kategoria" Multiplicity="1" />
+    <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoria">
+        <PropertyRef Name="Id_Kategorii" />
+      </Principal>
+      <Dependent Role="Produkt">
+        <PropertyRef Name="Id_Kategorii" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Przepis__Id_Typu__4D94879B">
+    <End Role="Typ" Type="Self.Typ" Multiplicity="1" />
+    <End Role="Przepis" Type="Self.Przepis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Typ">
+        <PropertyRef Name="Id_Typu" />
+      </Principal>
+      <Dependent Role="Przepis">
+        <PropertyRef Name="Id_Typu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Skladnik__Id_Pro__5535A963">
+    <End Role="Produkt" Type="Self.Produkt" Multiplicity="1" />
+    <End Role="Skladnik" Type="Self.Skladnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produkt">
+        <PropertyRef Name="Id_Produktu" />
+      </Principal>
+      <Dependent Role="Skladnik">
+        <PropertyRef Name="Id_Produktu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Skladnik__Id_Prz__5441852A">
+    <End Role="Przepis" Type="Self.Przepis" Multiplicity="1" />
+    <End Role="Skladnik" Type="Self.Skladnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Przepis">
+        <PropertyRef Name="Id_Przepisu" />
+      </Principal>
+      <Dependent Role="Skladnik">
+        <PropertyRef Name="Id_Przepisu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuickMeal_dbModelStoreContainer">
+    <EntitySet Name="Kategoria" EntityType="Self.Kategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produkt" EntityType="Self.Produkt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Przepis" EntityType="Self.Przepis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skladnik" EntityType="Self.Skladnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Typ" EntityType="Self.Typ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+      <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Produkt__Id_Kate__5165187F" Association="Self.FK__Produkt__Id_Kate__5165187F">
+      <End Role="Kategoria" EntitySet="Kategoria" />
+      <End Role="Produkt" EntitySet="Produkt" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Przepis__Id_Typu__4D94879B" Association="Self.FK__Przepis__Id_Typu__4D94879B">
+      <End Role="Typ" EntitySet="Typ" />
+      <End Role="Przepis" EntitySet="Przepis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Skladnik__Id_Pro__5535A963" Association="Self.FK__Skladnik__Id_Pro__5535A963">
+      <End Role="Produkt" EntitySet="Produkt" />
+      <End Role="Skladnik" EntitySet="Skladnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Skladnik__Id_Prz__5441852A" Association="Self.FK__Skladnik__Id_Prz__5441852A">
+      <End Role="Przepis" EntitySet="Przepis" />
+      <End Role="Skladnik" EntitySet="Skladnik" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

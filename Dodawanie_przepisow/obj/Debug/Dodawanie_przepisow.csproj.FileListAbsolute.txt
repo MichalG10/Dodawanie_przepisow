@@ -1,0 +1,13 @@
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\Dodawanie_przepisow.exe.config
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\Dodawanie_przepisow.exe
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\Dodawanie_przepisow.pdb
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\EntityFramework.dll
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\EntityFramework.xml
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\obj\Debug\Dodawanie_przepisow.csprojResolveAssemblyReference.cache
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\obj\Debug\Dodawanie_przepisow.Properties.Resources.resources
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\obj\Debug\Dodawanie_przepisow.csproj.GenerateResource.Cache
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\obj\Debug\Dodawanie_przepisow.exe
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\obj\Debug\Dodawanie_przepisow.pdb
+c:\users\michał\documents\visual studio 2015\Projects\Dodawanie_przepisow\Dodawanie_przepisow\obj\Debug\Dodawanie_przepisow.Form1.resources
